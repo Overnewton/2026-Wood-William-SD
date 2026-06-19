@@ -23,7 +23,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
      */
     @IBAction func btnRemoveDay(_ sender: Any) {
         
-        
+        //for loop that goes through the whole array removing a day from all values
+        for eachTask in tasks {
+            eachTask.dueDate -= 1
+        }
+        //saves change
+        savetoFile()
+        //reloads table changes
+        tblTasks.reloadData()
         
     }
     
@@ -34,8 +41,44 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
      */
     @IBAction func btnSort(_ sender: Any) {
         
+        //due date sort criteria selected
+        if segSort.selectedSegmentIndex == 0 {
+            //selections sort if there are less than 10 values in the array
+            if tasks.count < 10 {
+                tasks = selectionSortDueDate(array: tasks)
+            }
+            //quick sort if there are 10 or more values in the array
+            else {
+                tasks = quickSortDueDate(array: tasks)
+            }
+        }
         
+        //priority sort criteria selected
+        else if segSort.selectedSegmentIndex == 1 {
+            //selections sort if there are less than 10 values in the array
+            if tasks.count < 10 {
+                tasks = selectionSortPriority(array: tasks)
+            }
+            //quick sort if there are 10 or more values in the array
+            else {
+                tasks = quickSortPriority(array: tasks)
+            }
+        }
         
+        //class sort criteria selected
+        else if segSort.selectedSegmentIndex == 2 {
+            //selections sort if there are less than 10 values in the array
+            if tasks.count < 10 {
+                tasks = selectionSortClass(array: tasks)
+            }
+            //quick sort if there are 10 or more values in the array
+            else {
+                tasks = quickSortClass(array: tasks)
+            }
+        }
+        
+        //reloads table
+        tblTasks.reloadData()
     }
     
     

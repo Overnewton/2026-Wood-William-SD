@@ -44,36 +44,39 @@ class Task: Codable {
         
         if dueDate == 0 {
             if priority == 1 {
-                return "\(taskName) due today | low priority"
+                return "\(taskName) - due today | low priority"
             }
             else if priority == 2 {
-                return "\(taskName) due today | medium priority"
+                return "\(taskName) - due today | medium priority"
             }
-            return "\(taskName) due today | high priority"
+            return "\(taskName) - due today | high priority"
         }
         else if dueDate < 0 {
+            //for displaying overdue tasks better
+            let dueDateVisual: Int = dueDate * -1
+            
             if priority == 1 {
-                return "\(taskName) overdue \(dueDate) days | low priority"
+                return "\(taskName) - overdue by \(dueDateVisual) days | low priority"
             }
             else if priority == 2 {
-                return "\(taskName) overdue \(dueDate) days | medium priority"
+                return "\(taskName) - overdue by \(dueDateVisual) days | medium priority"
             }
-            return "\(taskName) overdue \(dueDate) days | high priority"
+            return "\(taskName) - overdue by \(dueDateVisual) days | high priority"
         }
             
         if priority == 1 {
-            return "\(taskName) due in \(dueDate) days | low priority"
+            return "\(taskName) - due in \(dueDate) days | low priority"
         }
         else if priority == 2 {
-            return "\(taskName) due in \(dueDate) days | medium priority"
+            return "\(taskName) - due in \(dueDate) days | medium priority"
         }
-        return "\(taskName) due in \(dueDate) days | high priority"
+        return "\(taskName) - due in \(dueDate) days | high priority"
         
     }
     
     //showDetails method - shows other more detailed information not included in the above example
     func showDetails() -> String {
-        return "Description: \(taskDescription), Class: \(taskClass)"
+        return "\(taskClass) - \(taskDescription)"
     }
     
     
