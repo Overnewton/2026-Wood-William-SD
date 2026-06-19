@@ -65,6 +65,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //swipe to delete to remove tasks from table
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {   if editingStyle == .delete {      tasks.remove(at: indexPath.row)   }
+        //saves new state with deleted value and updates the table
+        savetoFile()
         tblTasks.reloadData()
     }
     

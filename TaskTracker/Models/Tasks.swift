@@ -41,12 +41,39 @@ class Task: Codable {
     
     //showInfo method - shows primay information about tasks for displaying
     func showInfo() -> String {
-        return "\(taskName) for \(taskClass) due in \(dueDate) days | \(priority) priority"
+        
+        if dueDate == 0 {
+            if priority == 1 {
+                return "\(taskName) due today | low priority"
+            }
+            else if priority == 2 {
+                return "\(taskName) due today | medium priority"
+            }
+            return "\(taskName) due today | high priority"
+        }
+        else if dueDate < 0 {
+            if priority == 1 {
+                return "\(taskName) overdue \(dueDate) days | low priority"
+            }
+            else if priority == 2 {
+                return "\(taskName) overdue \(dueDate) days | medium priority"
+            }
+            return "\(taskName) overdue \(dueDate) days | high priority"
+        }
+            
+        if priority == 1 {
+            return "\(taskName) due in \(dueDate) days | low priority"
+        }
+        else if priority == 2 {
+            return "\(taskName) due in \(dueDate) days | medium priority"
+        }
+        return "\(taskName) due in \(dueDate) days | high priority"
+        
     }
     
     //showDetails method - shows other more detailed information not included in the above example
     func showDetails() -> String {
-        return "Description: \(taskDescription)"
+        return "Description: \(taskDescription), Class: \(taskClass)"
     }
     
     
