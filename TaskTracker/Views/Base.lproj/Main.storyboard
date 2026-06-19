@@ -187,6 +187,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sort"/>
+                                <connections>
+                                    <action selector="btnSort:" destination="H48-sQ-tKi" eventType="touchUpInside" id="DuU-ou-bu8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remove a day from all tasks:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omw-jS-CyW">
                                 <rect key="frame" x="20" y="669" width="217" height="21"/>
@@ -200,12 +203,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Remove Day"/>
+                                <connections>
+                                    <action selector="btnRemoveDay:" destination="H48-sQ-tKi" eventType="touchUpInside" id="GVk-TV-juP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dpS-6T-1Ne"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="agk-6A-UzE"/>
+                    <connections>
+                        <outlet property="segSort" destination="Spz-tf-AgO" id="dKQ-BJ-38b"/>
+                        <outlet property="tblTasks" destination="LVE-11-XTU" id="z0X-wc-sl3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kt-Ra-EMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -384,6 +394,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="bfX-93-5bp"/>
+                    <connections>
+                        <outlet property="lblCloseDeadline" destination="Ejw-8I-CIb" id="Id9-yj-l2T"/>
+                        <outlet property="lblHighPriority" destination="Zwy-hX-6qu" id="lVY-tg-ip4"/>
+                        <outlet property="lblLongDeadline" destination="yBG-nD-YGp" id="z5w-Ot-qTo"/>
+                        <outlet property="lblLowPriority" destination="VSw-ng-kjK" id="R2k-6g-iBD"/>
+                        <outlet property="lblMediumPriority" destination="oyG-8D-FQu" id="4iV-0x-Njj"/>
+                        <outlet property="lblNumberTasks" destination="9LP-Lc-Zz2" id="DuK-Xs-NUf"/>
+                        <outlet property="lblOverdue" destination="7ve-HB-62G" id="jcd-mW-0DI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qcn-Fr-SHG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -532,32 +551,11 @@
                                     <action selector="btnAdd:" destination="wev-QU-DFr" eventType="touchUpInside" id="eNO-Iz-eBu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9h-bB-UPM">
-                                <rect key="frame" x="76" y="252" width="263" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4R-eT-KBL">
-                                <rect key="frame" x="76" y="370" width="263" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozf-o5-Cqg">
-                                <rect key="frame" x="76" y="502" width="263" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yM1-eH-HC3">
-                                <rect key="frame" x="76" y="620" width="263" height="30"/>
+                                <rect key="frame" x="76" y="757" width="263" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -566,10 +564,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="iT6-v7-cJ5"/>
                     <connections>
-                        <outlet property="lblErrorClass" destination="ozf-o5-Cqg" id="Hsj-mg-Cjt"/>
-                        <outlet property="lblErrorDescription" destination="U4R-eT-KBL" id="bVZ-TH-Wv3"/>
-                        <outlet property="lblErrorDueDate" destination="yM1-eH-HC3" id="29g-V8-dCD"/>
-                        <outlet property="lblErrorName" destination="a9h-bB-UPM" id="eqx-q8-gmh"/>
+                        <outlet property="lblError" destination="yM1-eH-HC3" id="prj-YJ-h5R"/>
                         <outlet property="segPriority" destination="AlE-SG-psL" id="5Le-TI-beg"/>
                         <outlet property="txtClass" destination="Dgx-NF-qgf" id="NEA-TH-FpB"/>
                         <outlet property="txtDescription" destination="b2L-VV-7gM" id="czF-lc-nJJ"/>
@@ -609,6 +604,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.21960784310000001" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -9,14 +9,21 @@ import UIKit
 
 class TotalsViewController: UIViewController {
     
+    //outputs
     
+    @IBOutlet weak var lblNumberTasks: UILabel!
     
+    @IBOutlet weak var lblOverdue: UILabel!
     
+    @IBOutlet weak var lblCloseDeadline: UILabel!
     
+    @IBOutlet weak var lblLongDeadline: UILabel!
     
+    @IBOutlet weak var lblLowPriority: UILabel!
     
+    @IBOutlet weak var lblMediumPriority: UILabel!
     
-    
+    @IBOutlet weak var lblHighPriority: UILabel!
     
     
     

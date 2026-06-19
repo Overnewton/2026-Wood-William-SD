@@ -24,13 +24,8 @@ class InputsViewController: UIViewController {
     
     //outputs
     
-    @IBOutlet weak var lblErrorName: UILabel!
+    @IBOutlet weak var lblError: UILabel!
     
-    @IBOutlet weak var lblErrorDescription: UILabel!
-    
-    @IBOutlet weak var lblErrorClass: UILabel!
-    
-    @IBOutlet weak var lblErrorDueDate: UILabel!
     
     
     /*
@@ -49,10 +44,7 @@ class InputsViewController: UIViewController {
      */
     @IBAction func btnClear(_ sender: Any) {
         
-        lblErrorName.text = ""
-        lblErrorDescription.text = ""
-        lblErrorClass.text = ""
-        lblErrorDueDate.text = ""
+        lblError.text = ""
         segPriority.selectedSegmentIndex = 0
         txtName.text = ""
         txtDescription.text = ""
