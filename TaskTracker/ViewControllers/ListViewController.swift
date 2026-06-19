@@ -97,6 +97,45 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         let display = tasks[indexPath.row]
         
+        //colouring - if the task is overdue, show red background. If its priority is low, then if the due date is 2 or less days it displays in red, 5 or less days orange, otherwise green. Medium priority will have 3 or less days red, 7 or less days orange, otherwise green. High priority will have 5 or less days red, 14 or less days (2 weeks) orange, otherwise show green. This makes it so that depending on the priority, as the due date gets closer the background colour can change to stand out more, with higher priorities showing more importance sooner. 
+        if display.dueDate <= 0 {
+            cell.backgroundColor = UIColor.red
+        }
+        else if display.priority == 1 {
+            if display.dueDate <= 2 {
+                cell.backgroundColor = UIColor.red
+            }
+            else if display.dueDate <= 5 {
+                cell.backgroundColor = UIColor.orange
+            }
+            else {
+                cell.backgroundColor = UIColor.green
+            }
+        }
+        else if display.priority == 2 {
+            if display.dueDate <= 3 {
+                cell.backgroundColor = UIColor.red
+            }
+            else if display.dueDate <= 7 {
+                cell.backgroundColor = UIColor.orange
+            }
+            else {
+                cell.backgroundColor = UIColor.green
+            }
+        }
+        else if display.priority == 3 {
+            if display.dueDate <= 5 {
+                cell.backgroundColor = UIColor.red
+            }
+            else if display.dueDate <= 14 {
+                cell.backgroundColor = UIColor.orange
+            }
+            else {
+                cell.backgroundColor = UIColor.green
+            }
+        }
+        
+        
         cell.textLabel?.text = display.showInfo()
         
         cell.detailTextLabel?.text = display.showDetails()
