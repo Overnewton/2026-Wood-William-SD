@@ -25,13 +25,76 @@ class TotalsViewController: UIViewController {
     
     @IBOutlet weak var lblHighPriority: UILabel!
     
-    
+    /*
+     Calculate function - calculates information for the number of tasks, how many overdue tasks, closest and longest deadlines as well as the low, medium and high amounts of tasks
+     */
+    func calculate() {
+        
+        //sets values for calculations all to 0
+        var numOverdue: Int = 0
+        var lowDeadline: Int = 365
+        var highDeadline: Int = -1
+        var numLowPriority: Int = 0
+        var numMediumPriority: Int = 0
+        var numHighPriority: Int = 0
+        
+        //for loop to look through the entire eachTask array to calculate totals and information
+        for eachTask in tasks {
+            if eachTask.dueDate < 0 {
+                numOverdue += 1
+            }
+            if eachTask.dueDate < lowDeadline && eachTask.dueDate >= 0 {
+                lowDeadline = eachTask.dueDate
+            }
+            if eachTask.dueDate > highDeadline {
+                highDeadline = eachTask.dueDate
+            }
+            if eachTask.priority == 1 {
+                numLowPriority += 1
+            }
+            if eachTask.priority == 2 {
+                numMediumPriority += 1
+            }
+            if eachTask.priority == 3 {
+            numHighPriority += 1
+            }
+        }
+
+        //displays all found values
+        lblNumberTasks.text = "\(tasks.count)"
+        lblOverdue.text = "\(numOverdue)/\(tasks.count)"
+        //if the low or high deadlines are today, say "Due today", otherwise say how long until it is due
+        if lowDeadline == 0 {
+            lblCloseDeadline.text = "Due today"
+        }
+        else if lowDeadline == 365 {
+            lblCloseDeadline.text = ""
+        }
+        else {lblCloseDeadline.text = "\(lowDeadline) days"
+        }
+        if highDeadline == 0 {
+            lblLongDeadline.text = "Due today"
+        }
+        else if highDeadline == -1 {
+            lblCloseDeadline.text = ""
+        }
+        else {lblLongDeadline.text = "\(highDeadline) days"
+        }
+        lblLowPriority.text = "\(numLowPriority) / \(tasks.count)"
+        lblMediumPriority.text = "\(numMediumPriority) / \(tasks.count)"
+        lblHighPriority.text = "\(numHighPriority) / \(tasks.count)"
+        
+    }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //loads information
+        loadtoFile()
+        //calculates values
+        calculate()
     }
     
 
