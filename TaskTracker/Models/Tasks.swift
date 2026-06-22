@@ -12,6 +12,8 @@ class Task: Codable {
     
     //properties/attributes
     
+    //taskName and taskDescription are private variables so that they are more secure. The other fields won't include private information that is harmful to be found by others, so they do not need to be private, for example if a due date and priority is found by someone else, that doesn't tell them anything about the person. Name and description however can potentially include private information if the user decides to write it in themselves. 
+    
     //name of the task as a text value
     private var taskName: String
     //description of what the task involves as a text value
