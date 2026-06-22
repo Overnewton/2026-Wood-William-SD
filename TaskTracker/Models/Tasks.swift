@@ -42,6 +42,7 @@ class Task: Codable {
     //showInfo method - shows primay information about tasks for displaying
     func showInfo() -> String {
         
+        //reads field to see if it needs to say "due today", "overdue by x days" or in the case that it is in 1 day or overdue by 1 day displays "1 day" instead of "1 days"
         if dueDate == 0 {
             if priority == 1 {
                 return "\(taskName) - due today | low priority"

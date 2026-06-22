@@ -24,11 +24,11 @@ func savetoFile() {
        let jsonURL: URL = URL(fileURLWithPath: "tasks.json", relativeTo: directoryURL)
 
        try jsonString.write(to: jsonURL, atomically: true, encoding: .utf8)
-
+//test print statement to see if it works
        print("file was successfully exported")
 
     } catch {
-
+//test print statement if it fails
        print("file could not be exported")
 
     }
@@ -47,11 +47,11 @@ func loadtoFile() {
        let jsonData = try Data(contentsOf: jsonURL)
 
        tasks = try decoder.decode([Task].self, from: jsonData)
-
+//test print statement to see if it works
        print("json file was successfully imported")
 
     } catch {
-
+//test print statement to see if it fails
        print("file could not be imported")
 
     }

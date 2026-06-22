@@ -44,6 +44,8 @@ class InputsViewController: UIViewController {
                 //range check - checks that the due date is a positive value
                 if Int(txtDueDate.text!)! >= 0 {
                     
+                    print("Validation successful")
+                    
                     //reads text fields and assigns values
                     let inName: String = txtName.text!
                     let inDescription: String = txtDescription.text!

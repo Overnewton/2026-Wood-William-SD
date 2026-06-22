@@ -43,6 +43,7 @@ class TotalsViewController: UIViewController {
             if eachTask.dueDate < 0 {
                 numOverdue += 1
             }
+            //makes sure that it wont display overdue tasks as the next thing due for easier understandability. Overdue tasks are already displayed so the next not overdue task is more useful information
             if eachTask.dueDate < lowDeadline && eachTask.dueDate >= 0 {
                 lowDeadline = eachTask.dueDate
             }
@@ -80,6 +81,7 @@ class TotalsViewController: UIViewController {
         }
         else {lblLongDeadline.text = "\(highDeadline) days"
         }
+        //displays how many low, medium and high priority tasks out of total tasks
         lblLowPriority.text = "\(numLowPriority) / \(tasks.count)"
         lblMediumPriority.text = "\(numMediumPriority) / \(tasks.count)"
         lblHighPriority.text = "\(numHighPriority) / \(tasks.count)"
