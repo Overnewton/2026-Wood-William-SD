@@ -7,15 +7,15 @@
 
 
 
-//Tasks class to store all homework task values and information in a way that is easy to call on and change
+//Tasks class to store all homework task values and information in a way that is easy to call on and change - properties: taskName, taskDescription, taskClass, dueDate, priority - methods: toString(), showInfo(), showDetails()
 class Task: Codable {
     
     //properties/attributes
     
     //name of the task as a text value
-    var taskName: String
+    private var taskName: String
     //description of what the task involves as a text value
-    var taskDescription: String
+    private var taskDescription: String
     //what class / subject the task is for as a text value
     var taskClass: String
     //how many days until the task is due as an integer as it is a direct day count
@@ -51,7 +51,19 @@ class Task: Codable {
             }
             return "\(taskName) - due today | high priority"
         }
-        else if dueDate < 0 {
+        else if dueDate == -1 {
+            //for displaying overdue tasks better
+            let dueDateVisual: Int = dueDate * -1
+            
+            if priority == 1 {
+                return "\(taskName) - overdue by \(dueDateVisual) day | low priority"
+            }
+            else if priority == 2 {
+                return "\(taskName) - overdue by \(dueDateVisual) day | medium priority"
+            }
+            return "\(taskName) - overdue by \(dueDateVisual) day | high priority"
+        }
+        else if dueDate < -1 {
             //for displaying overdue tasks better
             let dueDateVisual: Int = dueDate * -1
             
@@ -64,6 +76,16 @@ class Task: Codable {
             return "\(taskName) - overdue by \(dueDateVisual) days | high priority"
         }
             
+        if priority == 1 && dueDate == 1 {
+            return "\(taskName) - due in \(dueDate) day | low priority"
+        }
+        else if priority == 2 && dueDate == 1 {
+            return "\(taskName) - due in \(dueDate) day | medium priority"
+        }
+        else if priority == 3 && dueDate == 1 {
+            return "\(taskName) - due in \(dueDate) day | high priority"
+        }
+        
         if priority == 1 {
             return "\(taskName) - due in \(dueDate) days | low priority"
         }
@@ -71,7 +93,6 @@ class Task: Codable {
             return "\(taskName) - due in \(dueDate) days | medium priority"
         }
         return "\(taskName) - due in \(dueDate) days | high priority"
-        
     }
     
     //showDetails method - shows other more detailed information not included in the above example

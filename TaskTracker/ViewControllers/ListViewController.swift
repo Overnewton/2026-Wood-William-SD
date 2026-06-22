@@ -135,9 +135,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         
-        
+        //title from showInfo method
         cell.textLabel?.text = display.showInfo()
-        
+        //subtitle from showDetails method
         cell.detailTextLabel?.text = display.showDetails()
 
         return cell
