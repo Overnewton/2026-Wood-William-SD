@@ -93,9 +93,9 @@ class TotalsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //loads information
+        //loads information to allow for calculations
         loadtoFile()
-        //calculates values
+        //calculates values upon opening page
         calculate()
     }
     
