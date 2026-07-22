@@ -71,13 +71,19 @@ class TotalsViewController: UIViewController {
         else if lowDeadline == 365 {
             lblCloseDeadline.text = ""
         }
+        else if lowDeadline == 1 {
+            lblCloseDeadline.text = "\(lowDeadline) day"
+        }
         else {lblCloseDeadline.text = "\(lowDeadline) days"
         }
         if highDeadline == 0 {
             lblLongDeadline.text = "Due today"
         }
         else if highDeadline == -1 {
-            lblCloseDeadline.text = ""
+            lblLongDeadline.text = ""
+        }
+        else if highDeadline == 1 {
+            lblLongDeadline.text = "\(highDeadline) day"
         }
         else {lblLongDeadline.text = "\(highDeadline) days"
         }
