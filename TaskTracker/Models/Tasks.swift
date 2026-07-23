@@ -7,7 +7,7 @@
 
 
 
-//Tasks class to store all homework task values and information in a way that is easy to call on and change - properties: taskName, taskDescription, taskClass, dueDate, priority - methods: toString(), showInfo(), showDetails()
+//Tasks class to store all homework task values and information in a way that is easy to call on and change - properties: taskName, taskDescription, taskClass, dueDate, priority - methods: toString() - used for testing values, showInfo() - used for displaying main values, showDetails() - used for displaying secondary values
 class Task: Codable {
     
     //properties/attributes
