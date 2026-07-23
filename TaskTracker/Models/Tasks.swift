@@ -36,12 +36,12 @@ class Task: Codable {
     
     //methods
     
-    //toString method - brings values of a task which can be useful for testing
+    //toString method - brings values of a task which can be useful for testing, returning the string of all the values
     func toString() -> String {
         return "Task name: \(self.taskName), \n Task description: \(self.taskDescription), \n Task Class: \(self.taskClass), \n Due date: \(self.dueDate), \n Priority: \(self.priority)"
     }
     
-    //showInfo method - shows primay information about tasks for displaying
+    //showInfo method - shows primay information about tasks for displaying, returning the string of main information
     func showInfo() -> String {
         
         //reads field to see if it needs to say "due today", "overdue by x days" or in the case that it is in 1 day or overdue by 1 day displays "1 day" instead of "1 days"
@@ -98,7 +98,7 @@ class Task: Codable {
         return "\(taskName) - due in \(dueDate) days | high priority"
     }
     
-    //showDetails method - shows other more detailed information not included in the above example
+    //showDetails method - shows other more detailed information not included in the above example, returning a string of the details
     func showDetails() -> String {
         return "\(taskClass) - \(taskDescription)"
     }

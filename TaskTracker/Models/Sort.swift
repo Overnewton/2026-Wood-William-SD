@@ -6,7 +6,7 @@
 //
 
 
-//selection sort due date - only used when there is less than 10 values as if there are too many, it could be slower
+//selection sort due date - only used when there is less than 10 values as if there are too many, it could be slower, returning the sorted list
 func selectionSortDueDate(array: [Task]) -> [Task] {
 
     if array.count > 1 {
@@ -34,7 +34,7 @@ func selectionSortDueDate(array: [Task]) -> [Task] {
     }
 }
 
-//quick sort due date - used when there are 10 or more values as when there are large quantities of data to sort, this can be faster and more efficient than selection sorts
+//quick sort due date - used when there are 10 or more values as when there are large quantities of data to sort, this can be faster and more efficient than selection sorts, returning the sorted list
 func quickSortDueDate(array: [Task]) -> [Task] {
     var less: [Task] = []
     var equal: [Task] = []
@@ -68,7 +68,7 @@ func quickSortDueDate(array: [Task]) -> [Task] {
         return array
     }}
 
-//selection sort priority - only used when there is less than 10 values as if there are too many, it could be slower
+//selection sort priority - only used when there is less than 10 values as if there are too many, it could be slower, returning the sorted list
 func selectionSortPriority(array: [Task]) -> [Task] {
 
     if array.count > 1 {
@@ -96,7 +96,7 @@ func selectionSortPriority(array: [Task]) -> [Task] {
     }
 }
 
-//quick sort priority - used when there are 10 or more values as when there are large quantities of data to sort, this can be faster and more efficient than selection sorts
+//quick sort priority - used when there are 10 or more values as when there are large quantities of data to sort, this can be faster and more efficient than selection sorts, returning the sorted list
 func quickSortPriority(array: [Task]) -> [Task] {
     var less: [Task] = []
     var equal: [Task] = []
@@ -131,7 +131,7 @@ func quickSortPriority(array: [Task]) -> [Task] {
     }}
 
 
-//selection sort class - only used when there is less than 10 values as if there are too many, it could be slower
+//selection sort class - only used when there is less than 10 values as if there are too many, it could be slower, returning the sorted list
 func selectionSortClass(array: [Task]) -> [Task] {
 
     if array.count > 1 {
@@ -159,7 +159,7 @@ func selectionSortClass(array: [Task]) -> [Task] {
     }
 }
 
-//quick sort class - used when there are 10 or more values as when there are large quantities of data to sort, this can be faster and more efficient than selection sorts
+//quick sort class - used when there are 10 or more values as when there are large quantities of data to sort, this can be faster and more efficient than selection sorts, returning the sorted list
 func quickSortClass(array: [Task]) -> [Task] {
     var less: [Task] = []
     var equal: [Task] = []
