@@ -125,7 +125,7 @@ func quickSortPriority(array: [Task]) -> [Task] {
                 greater.append(x)
             }
     }
-    return (quickSortDueDate(array: less) + equal + quickSortDueDate(array: greater))
+    return (quickSortPriority(array: less) + equal + quickSortPriority(array: greater))
     } else {
         return array
     }}
@@ -188,7 +188,7 @@ func quickSortClass(array: [Task]) -> [Task] {
                 greater.append(x)
             }
     }
-    return (quickSortDueDate(array: less) + equal + quickSortDueDate(array: greater))
+    return (quickSortClass(array: less) + equal + quickSortClass(array: greater))
     } else {
         return array
     }}
