@@ -37,7 +37,7 @@ class TotalsViewController: UIViewController {
         var numLowPriority: Int = 0
         var numMediumPriority: Int = 0
         var numHighPriority: Int = 0
-        //boolean to see if there are overdue tasks or not
+        //boolean to see if there are overdue tasks or not, requiring only a true of false response as "numOverdue" above already is used to show the exact amount. 
         var isOverdue: Bool = false
         
         //for loop to look through the entire eachTask array to calculate totals and information
