@@ -9,6 +9,9 @@ import UIKit
 
 class InputsViewController: UIViewController {
     
+    
+    // All variables, constants, functions, inputs, outputs and the class properties/attributes alongside methods use camelCase to help make them easier to distinguish and read. Inputs and outputs in particular also use hungarian notation to make it easier to understand what is is quickly, such as btn for button, txt for text, lbl for labels and so on.
+    
     //inputs
     
     @IBOutlet weak var txtName: UITextField!
@@ -50,7 +53,7 @@ class InputsViewController: UIViewController {
                     let inName: String = txtName.text!
                     let inDescription: String = txtDescription.text!
                     let inClass: String = txtClass.text!
-                    //reads due date as an integer, as it is an exact number of days, not needing to be a float such as 5.2 days. This is validated above to ensure that the correct information is inputted. A placeholder text of "10" and (days) help to show exactly what needs to be inpputted into the field. 
+                    //reads due date as an integer, as it is an exact number of days, not needing to be a floating point such as 5.2 days. This is validated above to ensure that the correct information is inputted. A placeholder text of "10" and (days) help to show exactly what needs to be inpputted into the field. 
                     let inDueDate: Int = Int(txtDueDate.text!)!
                     //reads and assigns priority value, assigning a numeric value for ease of calculations
                     var inPriority: Int = 1

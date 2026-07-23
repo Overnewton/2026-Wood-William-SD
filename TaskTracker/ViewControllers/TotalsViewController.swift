@@ -30,13 +30,15 @@ class TotalsViewController: UIViewController {
      */
     func calculate() {
         
-        //sets values for calculations all to 0
+        //sets values for calculations all to a default value, being an integer as it does not need to have decimal places as it will only be whole numbers
         var numOverdue: Int = 0
         var lowDeadline: Int = 365
         var highDeadline: Int = -1
         var numLowPriority: Int = 0
         var numMediumPriority: Int = 0
         var numHighPriority: Int = 0
+        //boolean to see if there are overdue tasks or not
+        var isOverdue: Bool = false
         
         //for loop to look through the entire eachTask array to calculate totals and information
         for eachTask in tasks {
@@ -61,6 +63,22 @@ class TotalsViewController: UIViewController {
             }
         }
 
+        //sees if there are overdue tasks or not and changes boolean value accordingly
+        if numOverdue > 0 {
+            isOverdue = true
+        }
+        else {
+            isOverdue = false
+        }
+        
+        //if there is overdue tasks, have red text for overdue tasks, otherwise keep text black
+        if isOverdue == true {
+            lblOverdue.textColor = UIColor.red
+        }
+        else {
+            lblOverdue.textColor = UIColor.black
+        }
+        
         //displays all found values
         lblNumberTasks.text = "\(tasks.count)"
         lblOverdue.text = "\(numOverdue)/\(tasks.count)"
